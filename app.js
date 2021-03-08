@@ -6,12 +6,20 @@ const app = Vue.createApp({
             confirmedName: '',
         };
     },
-    computed: {
-        fullName() {
-            if (this.name === '') {
+    // computed: {
+    //     fullName() {
+    //         if (this.name === '') {
+    //             return '';
+    //         }
+    //         return this.name + ' ' + 'Das';
+    //     },
+    // },
+    watch: {
+        name(value) {
+            if (value === '') {
                 return '';
             }
-            return this.name + ' ' + 'Das';
+            return value + ' ' + 'Das';
         },
     },
     methods: {
